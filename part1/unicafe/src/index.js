@@ -16,8 +16,8 @@ const Statistic = ({ text, value }) => {
 
 const Statistics = ({good, neutral, bad}) => {
   const allFeedback = good + neutral + bad;
-  const averageFeedback = (good - bad) / allFeedback;
-  const postiveFeedback = `${good / allFeedback * 100} %`;
+  const averageFeedback = ((good - bad) / allFeedback).toFixed(2);
+  const postiveFeedback = `${(good / allFeedback * 100).toFixed(2)} %`;
   if(allFeedback === 0) {
     return <div>No feedback given</div>
   }
